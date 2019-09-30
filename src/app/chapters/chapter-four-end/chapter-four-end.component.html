@@ -1,0 +1,20 @@
+<div class="chapter">
+  <h1>child to parent</h1>
+  <p>On va créer dans l'enfant, un gestionnaire d'évènement qui va émettre l'évènement à l'extérieur
+    grâce au décorateur Output()</p>
+  <p>dans l'enfant, on importe donc :</p>
+  <code>Output, EventEmitter</code>
+  <p>on va créer ainsi l'event interceptable</p>
+  <code>@Output() childEvent = new EventEmitter();</code>
+  <p>Puis on va émettre l'évènement:</p>
+  <code>this.childEvent.emit(this.childProperty);</code>
+  <p>dans le parent, au sein des balises appelant l'enfant, on va pouvoir intercepter le childEvent,
+  et quand l'évènement est intercepté, on va lancer une fonction du composant parent, ici receiveChild()</p>
+  <p>ce qui donne :</p>
+  <code>app-chapter-four-end-child (childEvent)="receiveChild($event)"</code>
+  <p>Je vais pouvoir interpoler cette valeur normalement,
+    et elle sera mise à jour à chaque fois que l'évènement sera déclenché.</p>
+  <code>{{ '{{' }} fromChild }}</code>
+  <p>propriété de l'enfant : {{ fromChild }}</p>
+  <app-chapter-four-end-child (childEvent)="receiveChild($event)"></app-chapter-four-end-child>
+</div>
