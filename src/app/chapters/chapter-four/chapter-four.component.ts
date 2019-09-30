@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChapterFourComponent implements OnInit {
 
+  private prenom: string;
+  private nom: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.prenom = 'julien';
+    this.nom = 'dutilleul';
+  }
+
+  onClick() {
+    if (this.prenom === 'toto') {
+      this.prenom = 'julien';
+    } else if (this.prenom === 'julien') {
+      this.prenom = 'toto';
+    }
+
   }
 
 }

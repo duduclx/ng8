@@ -7,4 +7,23 @@
   Mais revenons à notre histoire de data-binding.</p>
   <p>Derrière de mot bizarre, c'est simplement le fait d'utiliser une variable dans un template,
     mais aussi, depuis le template, pouvoir agir sur le composant.</p>
+  <p>dans chapter-four.component.ts, je vais créer, à l'intérieur du export class,
+  des propriétés prénom et nom, de type privée (private) et typées string.</p>
+  <p>ce qui donne</p>
+  <code>"private prenom: string;"</code><br>
+  <code>"private nom: string;"</code>
+  <p>dans la fonction ngOnInit(), j'affecte des valeurs à ces propriétés.</p>
+  <p>Pour les utiliser dans le template, j'utilise l'interpolation:</p>
+  <code>{{ '{{' }} mapropriété }}</code>
+  <p>Ce qui donne mon prenom est: {{ prenom }} et mon nom: {{ nom }}</p>
+  <p>ben faut aller voir le code pour comprendre, mais j'ai écrit:</p>
+  <code>Ce qui donne mon prenom est: {{ '{{' }} prenom }} et mon nom: {{ '{{' }} nom }}</code>
+  <p>Maintenant, depuis le template, créons un bouton pour créer un évènement, et changer les valeurs des propriétés:</p>
+  <a class="btn btn-primary" (click)="onClick()">change julien en toto</a> <span> {{ prenom }}</span>
+  <p>j'ai appelé un event de type click avec (click) et je lui est passé en argument une fonction onClick() écrite dans le composant,
+  qui change le prenom via this.prenom = 'toto';</p>
+  <p>je vais ajouter aussi, que si this.prenom == 'toto' alors le click change this.prenom en julien ...</p>
+  <p>C'était sympa, bien que très bref ... car on peut faire plein de chose, mais à ce niveau, on va en rester là.</p>
+  <p>On va rester dans le data-binding, mais en ajoutant une notion parent-child (parent - enfant).</p>
+  <p>go chapitre 4 suite</p>
 </div>
