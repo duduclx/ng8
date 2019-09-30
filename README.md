@@ -2,6 +2,34 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
 
+This intend to show case of use of angular functionality.
+
+## Summary
+
+### 1/ standalone component
+What is a component.
+
+### 2/ module
+How works module
+
+### 3/ router
+Specific router module
+
+### 4/ components interaction - parent to child
+data binding
+
+### 5/ component interaction - child to parent
+data binding
+
+### 6/ http service
+using http method
+
+### 7/ observable service
+using observable method
+
+### 8/ component interaction - any to any through service
+using an observable to change a component from an other one
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
