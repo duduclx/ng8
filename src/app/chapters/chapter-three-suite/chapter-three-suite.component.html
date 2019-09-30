@@ -20,6 +20,9 @@
   <p>Les crochets sont une directive ... c'est à dire que c'est "attaché" à une valeur modifiable ou non.
   Dans le cadre du routerLink, cela va recharger uniquement la partie 'router-outlet' sans recharger le reste
   (ici, le header et le footer)</p>
+  <p>Par contre, l'appel avec routerLink demande à connaitre les routes. étant donné qu'on est sur la barre de navigation,
+    il nous faudrait connaitre toutes les routes !</p>
+  <p>Pour cela, dans page-structure.module.ts, on vient importer app-routing.module ... sans ça, ça marchera pas !</p>
   <p>Quelle rapidité de navigation ! et c'est confortable pour les yeux !</p>
   <hr>
   <p>Prochain chapitre, le data binding ... avec le parent-enfant. go chapitre 4 !</p>
