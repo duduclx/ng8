@@ -1,0 +1,21 @@
+<hr>
+<p>coucou, je suis chapter-four-suite-child et je suis à l'intérieur de mon parent !</p>
+<p>Mon parent possède une propriété "adresse" que je souhaite utiliser dans mon template</p>
+<p>Pour la recevoir, je peux utiliser le décorateur @Input() devant la propritée</p>
+<code>@Input() adresse: string;</code>
+<p>Je vais pouvoir la récupérer, à condition qu'il me la passe.</p>
+<p>et idem avec la propriété "code".</p>
+<p>pour cela, il indique une directive ['adresse']="adresse" dans ma balise, soit:</p>
+<code>'<'app-chapter-four-suite-child [adresse]="adresse" [code]="code">'<'/app-chapter-four-suite-child>'</code>
+<p>Bon, faut enveler les simple quote du code ci-dessus ... Mais je récupère bien sa propriété adresse</p>
+<p>l'adresse du parent est :<span style='color: darkred'> {{ adresse }}</span></p>
+<p>Et ça, même si elle change dans le parent !!</p>
+<p>Je peux faire de même avec la propriété "code" du parent, mais je peux aussi renommé à l'intérieur de l'enfant:</p>
+<code>@Input('nomChezLeParent') nomChezEnfant: leType</code>
+<p>avec @Input('code') parentCode: number; je peux afficher la valeur de "code" en utilisant {{'{{'}} parentCode }}</p>
+<p>le code postal du parent est : {{ parentCode }}</p>
+<p>Mais cette méthode de renommage n'est pas appréciée et peu donner une alerte de type "no-input-rename",
+  vous indiquant qu'il est préférable de ne pas renommer une propriété.</p>
+<hr>
+<p>C'est sympa, et assez simple ... mais ne concerne que la direction parent -> enfant.</p>
+<p>Dans la suite du chapitre, on va voir comment passer de l'enfant au parent.</p>

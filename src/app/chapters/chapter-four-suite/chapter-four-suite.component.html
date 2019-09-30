@@ -1,0 +1,13 @@
+<div class="chapter" >
+  <h1>data binding parent-child</h1>
+  <p>Bon, je modifie mes liens de barre de navigation pour mettre ce composant sur /home
+    et le précédent chapitre dans le dropdown.</p>
+  <p>On va créer un parent (c'est ce composant) et un enfant.</p>
+  <p>on va créer l'enfant, on peut le faire dans le dossier chapter-four-suite, mais pas d'obligation ...</p>
+  <p>On va plutôt le créer à côté:</p>
+  <code>ng g c chapters/chapter-four-suite-child --module chapters</code>
+  <p>et pour l'afficher ici, on va utiliser les balises du composant, soit</p>
+  <code>app-chapter-four-suite-child</code> <br>
+  <a class="btn btn-primary" (click)="onClick()">changer l'adresse</a> <span>{{ adresse }}</span>
+  <app-chapter-four-suite-child [adresse]="adresse" [code]="code"></app-chapter-four-suite-child>
+</div>

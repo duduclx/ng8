@@ -8,6 +8,8 @@ import { ChapterThreeComponent } from './chapter-three/chapter-three.component';
 import { ChaptersRoutingModule } from './chapters-routing.module';
 import { ChapterThreeSuiteComponent } from './chapter-three-suite/chapter-three-suite.component';
 import { ChapterFourComponent } from './chapter-four/chapter-four.component';
+import { ChapterFourSuiteComponent } from './chapter-four-suite/chapter-four-suite.component';
+import { ChapterFourSuiteChildComponent} from './chapter-four-suite-child/chapter-four-suite-child.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ChapterFourComponent } from './chapter-four/chapter-four.component';
     ChapterTwoComponent,
     ChapterThreeComponent,
     ChapterThreeSuiteComponent,
-    ChapterFourComponent
+    ChapterFourComponent,
+    ChapterFourSuiteComponent,
+    ChapterFourSuiteChildComponent
   ],
   imports: [
     CommonModule,
