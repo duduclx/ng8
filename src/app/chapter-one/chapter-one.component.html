@@ -1,0 +1,27 @@
+<div class="chapter-one">
+  <h1>Mon premier composant</h1>
+  <p>Ce composant à été créer avec la CLI</p>
+  <p>Dans le terminal:</p>
+  <code>ng generate component chapter-one</code>
+  <p>ou en raccourci</p>
+  <code>ng g c chapter-one</code>
+  <p>Le composant à été automatiquement ajouté au module racine du projet.</p>
+  <p>Dans le fichier app.module.ts, dans les imports on peut voir que le fichier chapter-one.component est importé.
+    L'extension .ts n'est pas spécifié, car c'est le compilateur qui va ajouter cette information.
+    et dans le tableaux des déclarations, on voit que chapterOneComponent est déclaré.</p>
+  <p>Ainsi, il devient utilisable depuis le app.module.ts, qui est le module racine de notre application.</p>
+  <p>Pourtant, si on lance la commande</p>
+  <code>ng serve</code>
+  <p>pour lancer le serveur et l'application, on voit la page par défaut, créée lors de la construction du projet avec la commande</p>
+  <code>ng new ng8</code>
+  <p>Pour afficher notre composant, on va l'intégrer dans le app.component.html</p>
+  <p>chapterOneComponent sera alors enfant (child) de appComponent</p>
+  <p>Dans chapter-one.component.ts, on voit la déclaration</p>
+  <code>selector: "app-chapter-one"</code>
+  <p>Il nous suffit d'enlever le code superflu de la page app.component.html et de le remplacer par cette balise angular.</p>
+  <p>il ne reste plus que la balise app-chapter-one et router-outlet dans la page app.component.html</p>
+  <p>il est possible de mettre en forme notre composant, via le fichier chapter-one.component.scss</p>
+  <p>attention, ce fichier scss (ou css) ne s'applique que et uniquement à ce composant.
+  Il n'est pas possible ici de mettre en forme un autre composant.</p>
+  <p>je vais simplement formater ce chapitre à l'aide du fichier scss.</p>
+</div>

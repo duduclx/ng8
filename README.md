@@ -1,16 +1,16 @@
 # Ng8
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
+Ce projet à été généré avec [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
 
-This intend to show case of use of angular functionality.
+Il a pour but de montrer les fonctionnalités d'angular, sous forme de tutoriel.
 
 ## Summary
 
-### 1/ standalone component
-What is a component.
+### 1/ Le composant (component)
+Comment créer un composant et l'intégrer dans l'application.
 
 ### 2/ module
-How works module
+Comment fonctionne le module
 
 ### 3/ router
 Specific router module
