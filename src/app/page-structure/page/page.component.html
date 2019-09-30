@@ -1,30 +1,36 @@
 <div class="page">
-  <h1>explications</h1>
-  <p>On veut donc faire un header et footer à notre page, et que cela apparaisse partout, tout le temps dans notre application.
-  Quoi de mieux donc que de l'afficher dans le app.component.html.</p>
-  <p>On va donc faire un module, qui contient le header et le footer, puis on va afficher tout ça à la racine de l'application.</p>
-  <p>on va faire quelque commande:</p>
-  <code>ng g m page-structure</code>
-  <p>Cela nous créer un module "page-structure/page-structure.module.ts</p>
-  <p>On va créer deux composants et les déclarer directement dans ce module, pour cela, un raccourci est possible lors
-  de la création des composants, avec l'option --module</p>
-  <code>ng g c page-structure/header --module page-structure</code><br>
-  <code>ng g c page-structure/footer --module page-structure</code><br>
-  <code>ng g c page-structure/page --module page-structure</code><br>
-  <p>A chaque fois, le module page-structure est mis à jour en incluant le nouveau composant.</p>
-  <p>ici, je créé le composant "page", mais c'est juste pour vous afficher ce texte, on va le détruire après.</p>
-  <p>On commence par enlever l'importation de chapters.module depuis app.module, pour importer à la place page-structure.module</p>
-  <p>Dans page-structure.module, on ajoute le tableau d'export pour exporter le headerComponent et le footerComponent,
-  et dans mon cas, je rajoute le pageComponent</p>
-  <p>on peut donc maintenant afficher le header et le footer depuis le app.component.
-  mettons donc les balises de nos composants ainsi:</p>
-  <p>app-header</p>
-  <p>router-outlet</p>
-  <p>app-footer</p>
-  <p>le header et le footer s'affichent bien ... on va les mettre en forme !</p>
-  <p>Pour cela, allez directement voir les fichiers header.component.html et footer.component.html, ainsi que leur fichier de style .scss</p>
-  <p> ... </p>
-  <p>Wahou, c'est super dégeu ! mais bon, on a ce qu'on veut !</p>
-  <p>Avant d'aller plus loin, on va voir comment importer correctement bootstrap4 dans notre projet.
-  Pour cela, on va continuer sur la branche chapter2end</p>
+  <h1>importer bootstrap</h1>
+  <p>Pour ce faciliter la vie, rien de tel que bootstrap.
+  Mais pour l'importer, on ne va pas aller dans le fichier index.html pour y glisser un link vers le fichier css.</p>
+  <p>C'est faisable, mais ce n'est pas une bonne pratique !</p>
+  <p> on va plutôt utiliser et pa la même occasion découvrir le fichier angular.json qui est à la racine de notre projet.</p>
+  <p>Celui-ci définit notre application ... avec ses dépendances, ses options pour l'environnement de développement
+    et l'environnement de production, et les tests de l'application ... bref, tout ou presque.</p>
+  <p>On va ajouter bootstrap comme dépendance à notre projet</p>
+  <code>npm install bootstrap --save</code>
+  <p>On va avoir une dossier bootstrap à l'intérieur du dossier nodes_modules</p>
+  <p>Dans angular.json, on va voir une propriété "build", sous laquelle on va trouver une propriété "styles" comportant un tableau.</p>
+  <p>on ajoute, avant styles.scss notre css de bootstrap:</p>
+  <code>"node_modules/bootstrap/dist/css/bootstrap.css",</code>
+  <p>on remplace le contenu de header.component.html par une navbar de bootstrap et on peut même enlever le scss qu'on avait fait dans
+  header.component.scss</p>
+  <p>Mais bootstrap utilise des librairies javascript ... par exemple, là, mon dropdown ne fonctionne pas.</p>
+  <p>Pour ajouter les librairies js nécessaire, on va s'y prendre de la même manière ...</p>
+  <p>déjà, ajoutons le bottstrap.js dans le fichier angular.json</p>
+  <p>attention, il ne s'agit pas d'un style, mais d'un script.</p>
+  <p>sous notre tableau styles, auquel on a ajouté le css de bootstrap, on voit un tableau scripts qui est vide.
+  Ajoutons "node_modules/bootstrap/dist/js/bootstrap.js" à ce tableau !</p>
+  <p>Il faut aussi popper.js et jquery pour que cela fonctionne ...</p>
+  <code>npm install popper.js --save</code><br>
+  <code>npm install jquery --save</code>
+  <p>avant de déclarer bootstrap.js, on ajouter jquery et popper:</p>
+  <code>"scripts": [
+    "node_modules/jquery/dist/jquery.min.js",<br>
+    "node_modules/popper.js/dist/umd/popper.min.js",<br>
+    "node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ]</code>
+  <p>Je modifie également le footer, avec un stiky footer de bootstrap.</p>
+  <p>Et vu que bootstrap et disponible partout dans l'application, on va ajouter un peu de style dans app.component.html,
+  en mettant simplement une balise main avec la classe container-fluid autour de ma page et mon router-outlet</p>
+  <p>D'ailleurs, il serait temps d'en parler de ce router-outlet ... ben allons au chapitre 3 !</p>
 </div>
