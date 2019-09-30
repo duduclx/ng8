@@ -1,24 +1,26 @@
-<h1>router et router-link</h1>
-<p>Je commence par créer un composant chapter-three-suite:</p>
-<code>ng g c chapters/chapter-three-suite --module chapters</code>
-<p>Vous avez compris donc que j'ajoute automatiquement de composant au module chapters ;)</p>
-<p>On commence par faire pointer le home vers le composant chapterThreeSuite, pour faciliter la lecture</p>
-<p>Puis on va créer les routes vers les autres chapitres, ce toujours dans notre chapters-routing.module.ts</p>
-<ul>
-  <li>/composant pointe sur chapter-one</li>
-  <li>/module pointe sur chapter-two</li>
-  <li>/router pointe sur chapter-three</li>
-  <li>/home pointe sur chapter-three-suite</li>
-</ul>
-<p>On va aller directement sur notre barre de navigation, et ajouter des liens vers les pages</p>
-<p>Go !
-On ouvre le header.component.html</p>
-<p>On remplace les liens href par des liens routerlink ... mais entre crochets !</p>
-<code>[routerLink]="['/home']"</code>
-<p>j'ajoute 3 autres liens avec les chemins comme décrit plus haut.</p>
-<p>Les crochets sont une directive ... c'est à dire que c'est "attaché" à une valeur modifiable ou non.
-Dans le cadre du routerLink, cela va recharger uniquement la partie 'router-outlet' sans recharger le reste
-(ici, le header et le footer)</p>
-<p>Quelle rapidité de navigation ! et c'est confortable pour les yeux !</p>
-<hr>
-<p>Prochain chapitre, le data binding ... avec le parent-enfant. go chapitre 4 !</p>
+<div class="chapter">
+  <h1>router et router-link</h1>
+  <p>Je commence par créer un composant chapter-three-suite:</p>
+  <code>ng g c chapters/chapter-three-suite --module chapters</code>
+  <p>Vous avez compris donc que j'ajoute automatiquement de composant au module chapters ;)</p>
+  <p>On commence par faire pointer le home vers le composant chapterThreeSuite, pour faciliter la lecture</p>
+  <p>Puis on va créer les routes vers les autres chapitres, ce toujours dans notre chapters-routing.module.ts</p>
+  <ul>
+    <li>/composant pointe sur chapter-one</li>
+    <li>/module pointe sur chapter-two</li>
+    <li>/router pointe sur chapter-three</li>
+    <li>/home pointe sur chapter-three-suite</li>
+  </ul>
+  <p>On va aller directement sur notre barre de navigation, et ajouter des liens vers les pages</p>
+  <p>Go !
+  On ouvre le header.component.html</p>
+  <p>On remplace les liens href par des liens routerlink ... mais entre crochets !</p>
+  <code>[routerLink]="['/home']"</code>
+  <p>j'ajoute 3 autres liens avec les chemins comme décrit plus haut.</p>
+  <p>Les crochets sont une directive ... c'est à dire que c'est "attaché" à une valeur modifiable ou non.
+  Dans le cadre du routerLink, cela va recharger uniquement la partie 'router-outlet' sans recharger le reste
+  (ici, le header et le footer)</p>
+  <p>Quelle rapidité de navigation ! et c'est confortable pour les yeux !</p>
+  <hr>
+  <p>Prochain chapitre, le data binding ... avec le parent-enfant. go chapitre 4 !</p>
+</div>

@@ -1,34 +1,38 @@
-<h1>le router !</h1>
-<p>Le router-outlet, est en faite là où l'on va injecter nos contenus.
-C'est par défaut des composants, mais cela peut-être un module également.</p>
-<p>d'abord, voyons voir avec les composants.</p>
-<p>J'ai donc supprimé le composant page précédement créé, ainsi que sa déclaration dans page-structure, et dans app.component.html</p>
-<p>J'ai créé le composant chapter-three que j'ai ajouté au module chapters via</p>
-<code>ng g c chapters/chapter-three --module chapters</code>
-<p>Je rajoutes le module chapters dans le tableau d'import du module app.module.ts.
-Dans mon app.module, j'ai donc accès aux modules page-structure (qui me fournit le header et footer) et chapters (qui me fournit des pages simples pour l'instant)</p>
-<p>Maintenant, il me faut injecter une route qui va aller pointer vers ce composant.
-  J'ouvre donc <strong>app-routing.module.ts</strong>.</p>
-<p>on y voit un tableau Routes auquel j'ajoute une route de redirection, sous forme d'objet:</p>
-<code>{{ '{' }}path: '', redirectTo: 'home', pathMatch: 'full'{{ '}' }}</code>
-<p>cela veut dire que si je vais sur l'url 'localhost:4200/' alors je suis redirigé vers le chemin 'localhost:4200/home'</p>
-<p>je veux maintenant déclarer mes routes, non pas dans le app-routing, mais dans un module specifique dans chapters.</p>
-<p>Je créé donc un module de routing à côté de chapters.module.ts</p>
-<code> ng g m chapters/chapters-routing --flat --module chapters</code>
-<p>l'option flat indique que je ne créé pas de dossier chapters-routing</p>
-<p>Dans chapters-routing.ts, il me faut importer les fonctionnalités de router d'angular:</p>
-<code>import {{ '{' }}Routes, RouterModule{{ '}' }} from '@angular/router';</code>
-<p>un peu comme dans app-routing.module.ts, je fait une constante routes qui contient un tableau de route.
-Je déclare un objet, indiquant pour pour l'url 'home', je charge le composant "chapterThreeComponent"</p>
-<code>{{ '{' }}path: 'home', component: ChapterThreeComponent{{ '}' }}</code>
-<p>j'ajoute l'import de RouterModule et lui indique que les routes déclarer ici sont des routes enfants.</p>
-<p>et j'exporte le module RouterModule pour qu'il soit exploitable dans app.module</p>
-<code>imports: [RouterModule.forChild(routes) ],
-  exports: [RouterModule]</code>
-<p>En faite, il se passe qu'avec la fonction router d'angular, la balise "router-outlet" est remplacée par celle du composant déclaré par la route.</p>
-<p>Ainsi, vous voyez la page avec son header et footer, et ce texte, qui est le composant chapterThreeComponent.</p>
-<p>le fait de ne pas déclarer les routes directement dans app-routing.module permettra par la suite de mieux gérer ses routes et les rendre lisible.
-Bon, là maintenant, c'est pas le cas.</p>
-<p>imaginer un dossier 'home', avec mes composants de ma page d'accueil, ma page d'accueil, et éventuellement les sous routes ('home/quelque-chose').
-Il me sera alors facile de retrouver des routes, des parties entière de l'application ... etc</p>
-<p>On va jouer rapidement avec le router et le router-link dans la suite du chapitre 3.</p>
+<div class="chapter">
+
+  <h1>le router !</h1>
+  <p>Le router-outlet, est en faite là où l'on va injecter nos contenus.
+  C'est par défaut des composants, mais cela peut-être un module également.</p>
+  <p>d'abord, voyons voir avec les composants.</p>
+  <p>J'ai donc supprimé le composant page précédement créé, ainsi que sa déclaration dans page-structure, et dans app.component.html</p>
+  <p>J'ai créé le composant chapter-three que j'ai ajouté au module chapters via</p>
+  <code>ng g c chapters/chapter-three --module chapters</code>
+  <p>Je rajoutes le module chapters dans le tableau d'import du module app.module.ts.
+  Dans mon app.module, j'ai donc accès aux modules page-structure (qui me fournit le header et footer) et chapters (qui me fournit des pages simples pour l'instant)</p>
+  <p>Maintenant, il me faut injecter une route qui va aller pointer vers ce composant.
+    J'ouvre donc <strong>app-routing.module.ts</strong>.</p>
+  <p>on y voit un tableau Routes auquel j'ajoute une route de redirection, sous forme d'objet:</p>
+  <code>{{ '{' }}path: '', redirectTo: 'home', pathMatch: 'full'{{ '}' }}</code>
+  <p>cela veut dire que si je vais sur l'url 'localhost:4200/' alors je suis redirigé vers le chemin 'localhost:4200/home'</p>
+  <p>je veux maintenant déclarer mes routes, non pas dans le app-routing, mais dans un module specifique dans chapters.</p>
+  <p>Je créé donc un module de routing à côté de chapters.module.ts</p>
+  <code> ng g m chapters/chapters-routing --flat --module chapters</code>
+  <p>l'option flat indique que je ne créé pas de dossier chapters-routing</p>
+  <p>Dans chapters-routing.ts, il me faut importer les fonctionnalités de router d'angular:</p>
+  <code>import {{ '{' }}Routes, RouterModule{{ '}' }} from '@angular/router';</code>
+  <p>un peu comme dans app-routing.module.ts, je fait une constante routes qui contient un tableau de route.
+  Je déclare un objet, indiquant pour pour l'url 'home', je charge le composant "chapterThreeComponent"</p>
+  <code>{{ '{' }}path: 'home', component: ChapterThreeComponent{{ '}' }}</code>
+  <p>j'ajoute l'import de RouterModule et lui indique que les routes déclarer ici sont des routes enfants.</p>
+  <p>et j'exporte le module RouterModule pour qu'il soit exploitable dans app.module</p>
+  <code>imports: [RouterModule.forChild(routes) ],
+    exports: [RouterModule]</code>
+  <p>En faite, il se passe qu'avec la fonction router d'angular, la balise "router-outlet" est remplacée par celle du composant déclaré par la route.</p>
+  <p>Ainsi, vous voyez la page avec son header et footer, et ce texte, qui est le composant chapterThreeComponent.</p>
+  <p>le fait de ne pas déclarer les routes directement dans app-routing.module permettra par la suite de mieux gérer ses routes et les rendre lisible.
+  Bon, là maintenant, c'est pas le cas.</p>
+  <p>imaginer un dossier 'home', avec mes composants de ma page d'accueil, ma page d'accueil, et éventuellement les sous routes ('home/quelque-chose').
+  Il me sera alors facile de retrouver des routes, des parties entière de l'application ... etc</p>
+  <p>On va jouer rapidement avec le router et le router-link dans la suite du chapitre 3.</p>
+
+</div>
