@@ -1,0 +1,30 @@
+<div class="page">
+  <h1>explications</h1>
+  <p>On veut donc faire un header et footer à notre page, et que cela apparaisse partout, tout le temps dans notre application.
+  Quoi de mieux donc que de l'afficher dans le app.component.html.</p>
+  <p>On va donc faire un module, qui contient le header et le footer, puis on va afficher tout ça à la racine de l'application.</p>
+  <p>on va faire quelque commande:</p>
+  <code>ng g m page-structure</code>
+  <p>Cela nous créer un module "page-structure/page-structure.module.ts</p>
+  <p>On va créer deux composants et les déclarer directement dans ce module, pour cela, un raccourci est possible lors
+  de la création des composants, avec l'option --module</p>
+  <code>ng g c page-structure/header --module page-structure</code><br>
+  <code>ng g c page-structure/footer --module page-structure</code><br>
+  <code>ng g c page-structure/page --module page-structure</code><br>
+  <p>A chaque fois, le module page-structure est mis à jour en incluant le nouveau composant.</p>
+  <p>ici, je créé le composant "page", mais c'est juste pour vous afficher ce texte, on va le détruire après.</p>
+  <p>On commence par enlever l'importation de chapters.module depuis app.module, pour importer à la place page-structure.module</p>
+  <p>Dans page-structure.module, on ajoute le tableau d'export pour exporter le headerComponent et le footerComponent,
+  et dans mon cas, je rajoute le pageComponent</p>
+  <p>on peut donc maintenant afficher le header et le footer depuis le app.component.
+  mettons donc les balises de nos composants ainsi:</p>
+  <p>app-header</p>
+  <p>router-outlet</p>
+  <p>app-footer</p>
+  <p>le header et le footer s'affichent bien ... on va les mettre en forme !</p>
+  <p>Pour cela, allez directement voir les fichiers header.component.html et footer.component.html, ainsi que leur fichier de style .scss</p>
+  <p> ... </p>
+  <p>Wahou, c'est super dégeu ! mais bon, on a ce qu'on veut !</p>
+  <p>Avant d'aller plus loin, on va voir comment importer correctement bootstrap4 dans notre projet.
+  Pour cela, on va continuer sur la branche chapter2end</p>
+</div>
