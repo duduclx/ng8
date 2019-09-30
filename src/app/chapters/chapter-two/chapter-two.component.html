@@ -1,0 +1,37 @@
+<div class="chapter-two">
+  <h1>Les modules</h1>
+  <p>Les modules servent à déclarer des composants, afin de les rendre utilisables.
+    Mais avant de voir cela en détail, il faut déjà comprendre le rôle de app.module.ts</p>
+  <p>Celui-ci sert à initialiser (lancer) l'application. Et cela doit être sa seule tâche.</p>
+  <p>Il ne doit donc pas déclarer lui-même les composants, surtout, imaginez qu'à la fin,
+    on peut avoir 50 composants pour ce projet.</p>
+  <p>On aurait donc à gérer un tableau de 50 déclarations dans le app.module.ts,
+    et sûrement que tout n'est pas utile pour initialiser l'application</p>
+  <p>On va donc créer un module qui va s'occuper de notre chapter-two:</p>
+  <code>ng generate module chapters</code>
+  <p>ou en raccourci:</p>
+  <code>ng g m chapters</code>
+  <p>On a donc un dossier pour notre module chapters, avec un fichier chapters.module.ts</p>
+  <p>L'idée est donc d'avoir notre composants chapter-* déclarés à l'intérieur de ce module,
+  et pour plus de lisibilité, on va également déplacer nos dossiers chapter-* dans le dossier chapters.</p>
+  <p>Maintenant, on a une erreur dans le fichier app.module.ts, qui veut importer des fichiers qui ne sont plus
+  à l'emplacement spécifié, mais surtout, on ne veut plus importer et déclarer nos composants directement dans
+  app.module.ts</p>
+  <p>enlevons donc ces imports et déclarations de app.module.ts</p>
+  <p>et ajoutons les imports de chapterOneComponent et chapterTwoComponent dans chapters.module.ts</p>
+  <p>Bien, mais à aucun moment l'application (app.module.ts) à connaissance de chapters.modules.ts et ce qu'il déclare.</p>
+  <p>Ajoutons dans app.module.ts un import du module chapters.module.ts dans le tableau "imports".</p>
+  <p>A cette étape, il manque une chose importante.
+  En effet, le module racine (app.module.ts) importe bien le module chapters qui lui déclare nos composants,
+  mais si je souhaite utiliser mon composant au niveau de app.component.html,
+    celui-ci ne connait pas la balise app-chapter-one ou app-chapter-two</p>
+  <p>en faite, on a chapter-one et chapter-two qui sont des sibling, des frères, ils sont à la même "hauteur".
+  En revanche, app.component lui est ni frère, ni parent, ni enfant ...</p>
+  <p>Pour récupérer la balise app-chapter-one ou app-chapter-two ailleurs, il faut l'exporter.</p>
+  <p>dans chapters.module.ts, on va rajouter un décorateur "exports" auquel on passe un tableau listant les composants à exporter.</p>
+  <p>Puis dans app.component.html, je vais maintenant afficher app-chapter-two avant la balise router-outlet.</p>
+  <p>Le module permet donc de centraliser des déclarations et des exports (et d'autres choses encore),
+   permettant une meilleure architecture et lecture de notre code.</p>
+  <p>On va illustrer cela un peu mieux, en créant deux composants, un pour la barre de navigation et un pour le pied de page.</p>
+  <p>Pour cela, on va faire un chapitre2suite.</p>
+</div>
