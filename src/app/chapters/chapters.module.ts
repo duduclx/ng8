@@ -6,12 +6,14 @@ import { ChapterTwoComponent} from './chapter-two/chapter-two.component';
 import { ChapterThreeComponent } from './chapter-three/chapter-three.component';
 
 import { ChaptersRoutingModule } from './chapters-routing.module';
+import { ChapterThreeSuiteComponent } from './chapter-three-suite/chapter-three-suite.component';
 
 @NgModule({
   declarations: [
     ChapterOneComponent,
     ChapterTwoComponent,
-    ChapterThreeComponent
+    ChapterThreeComponent,
+    ChapterThreeSuiteComponent
   ],
   imports: [
     CommonModule,
