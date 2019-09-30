@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import {PageStructureModule} from './page-structure/page-structure.module';
+import { PageStructureModule} from './page-structure/page-structure.module';
+import { ChaptersModule } from './chapters/chapters.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {PageStructureModule} from './page-structure/page-structure.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PageStructureModule
+    PageStructureModule,
+    ChaptersModule
   ],
   providers: [],
   bootstrap: [AppComponent]

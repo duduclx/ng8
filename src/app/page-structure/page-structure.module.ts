@@ -3,17 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { PageComponent } from './page/page.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, PageComponent],
+  declarations: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule
   ],
   exports: [
     HeaderComponent,
-    FooterComponent,
-    PageComponent
+    FooterComponent
   ]
 })
 export class PageStructureModule { }
