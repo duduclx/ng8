@@ -8,16 +8,18 @@ import {ChapterThreeSuiteComponent} from './chapter-three-suite/chapter-three-su
 import {ChapterFourComponent} from './chapter-four/chapter-four.component';
 import {ChapterFourSuiteComponent} from './chapter-four-suite/chapter-four-suite.component';
 import {ChapterFourEndComponent} from './chapter-four-end/chapter-four-end.component';
+import {ChapterFiveComponent} from './chapter-five/chapter-five.component';
 
 
 const routes: Routes = [
-  {path: 'home', component: ChapterFourEndComponent},
+  {path: 'home', component: ChapterFiveComponent},
   {path: 'composant', component: ChapterOneComponent},
   {path: 'module', component: ChapterTwoComponent},
   {path: 'router', component: ChapterThreeComponent},
   {path: 'routerLink', component: ChapterThreeSuiteComponent},
   {path: 'data-binding', component: ChapterFourComponent},
-  {path: 'parent-to-child', component: ChapterFourSuiteComponent}
+  {path: 'parent-to-child', component: ChapterFourSuiteComponent},
+  {path: 'child-to-parent', component: ChapterFourEndComponent}
 ];
 
 @NgModule({

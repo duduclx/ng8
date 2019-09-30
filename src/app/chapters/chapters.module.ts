@@ -12,6 +12,8 @@ import { ChapterFourSuiteComponent } from './chapter-four-suite/chapter-four-sui
 import { ChapterFourSuiteChildComponent} from './chapter-four-suite-child/chapter-four-suite-child.component';
 import { ChapterFourEndComponent } from './chapter-four-end/chapter-four-end.component';
 import { ChapterFourEndChildComponent } from './chapter-four-end-child/chapter-four-end-child.component';
+import { ChapterFiveComponent } from './chapter-five/chapter-five.component';
+import {ChapterFiveService} from './chapter-five.service';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { ChapterFourEndChildComponent } from './chapter-four-end-child/chapter-f
     ChapterFourSuiteComponent,
     ChapterFourSuiteChildComponent,
     ChapterFourEndComponent,
-    ChapterFourEndChildComponent
+    ChapterFourEndChildComponent,
+    ChapterFiveComponent
   ],
   imports: [
     CommonModule,
     ChaptersRoutingModule
   ],
-  exports: []
+  exports: [],
+  providers: [ChapterFiveService]
 })
 export class ChaptersModule { }

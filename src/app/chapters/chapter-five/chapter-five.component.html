@@ -1,0 +1,15 @@
+<div class="chapter">
+  <h1>Les Services</h1>
+  <p>Un service sert à centraliser du code, dans l'idée que plusieurs composants peuvent consommer ce service.</p>
+  <p>Il est particulier, car le service va être injecté dans le composant qui va l'utiliser.
+  D'ailleurs, on retrouve logiquement le décorateur @Injectable() dans un service.</p>
+  <p>Créons le service :</p>
+  <code>ng g s chapters/chapter-five</code>
+  <p>Un service est "fourni" par un "fournisseur", un "provider".
+  On va ajouter notre provider à chapters.module.ts, afin qu'il soit accessible à toutes les pages du module chapters.</p>
+  <p>Sous le tableau des exports, on va donc ajouter le tableau des providers :</p>
+  <code>exports: [],<br>
+    providers: [ChapterFiveService]</code>
+  <p> ... expliquer la création de la fonction dans le service, l'import du service, sa consommation ...</p>
+  <p>{{ message }}</p>
+</div>
